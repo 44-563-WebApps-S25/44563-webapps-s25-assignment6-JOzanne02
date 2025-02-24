@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jackson's City Game</title>
+</head> 
+
+<body>
+
+<h2>City game by Jackson Ozanne</h2>
+
+<form>
+    <label for="hiddenCity">Where in the world </label>
+    <input type ="password" id="hiddenCity" value="San Diego"> <br>
+
+    <label for="cityGuess">Guess the city </label>
+    <input type ="text" id="cityGuess"> <br>
+
+    <input type="button" onclick="checkCity()" value="Guess the City">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let oops = 0;
+let found = 0;
+
+function checkCity() {
+    city = document.getElementById("hiddenCity").value;
+    guess = document.getElementById("cityGuess").value;
+
+    if(city === guess){
+        found ++;
+        alert ("GotCha");
+        document.getElementById("result").textContent = "Correct Guesses: " + found + ", Incorrect Guesses: " + oops;
+    } else {
+        oops ++;
+        alert ("Awe");
+        document.getElementById("result").textContent = "Correct Guesses: " + found + ", Incorrect Guesses: " + oops;
+    }
+}
+</script>
+
+</body>
+</html> 

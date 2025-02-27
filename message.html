@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Cost Per Letter Calculator</title>
+</head> 
+
+<body>
+
+<h2>Jackson Ozanne Message Cost</h2>
+
+<form>
+    <label for="basicPrice">Enter cost per letter </label>
+    <input type ="number" id="basicPrice" name="basicPrice" value=0.5> <br>
+
+    <label for="breakAt">Enter length needed for the discount </label>
+    <input type ="number" id="breakAt" name="breakAt" value=9> <br>
+
+    <label for="discount">enter the discount percent </label>
+    <input type ="number" id="discount" name="discount" value = 10> <br>
+
+    <input type="button" onclick="amounts()" value="Show total">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function amounts (){
+    const price = parseFloat(document.getElementById("basicPrice").value); 
+    const breakAt = parseInt(document.getElementById("breakAt").value); 
+    const discount = parseFloat(document.getElementById("discount").value)/100;
+
+    let myResults="";
+    for (let size = breakAt - 3; size <= breakAt + 3; size++) {
+        let total = 0;
+
+        for (let l = 1; l <=size; l++) {
+            if (l <breakAt) {
+                total += price;}
+            else {
+                total += price * (1-discount);}
+            }
+        myResults += " size " + size + " is " + total ;
+    }
+
+    document.getElementById("result").textContent = "Totals are: " + myResults;
+}
+</script>
+
+</body>
+</html> 

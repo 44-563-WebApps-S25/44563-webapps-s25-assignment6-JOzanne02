@@ -42,5 +42,36 @@ function checkCity() {
 }
 </script>
 
+<div>
+    <img src="Images/otter.jpg" alt="Otter" width="150" height="150" id ="petImage" onclick="updatePic()">
+</div>
+
+<script>
+
+let picUsed = 1;
+
+function updatePic() {
+    const image = document.getElementById("petImage");
+    switch (picUsed) {
+        case 1:
+            image.src="Images/otters.jpg";
+            picUsed = 2;
+            break;
+        case 2:
+            image.src="Images/newt.jpg";
+            picUsed = 3;
+            break;
+        case 3:
+            image.src="Images/nwfndlnd.jpg";
+            picUsed = 1;
+            break;
+        default:
+            image.src ="Images/otters.jpg";
+            usePic = 1;
+    }
+}
+    
+</script>
+
 </body>
 </html> 
